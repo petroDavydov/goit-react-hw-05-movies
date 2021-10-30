@@ -1,0 +1,24 @@
+.title {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 25px;
+  font-weight: 600;
+  margin: 10px 0px;
+  color: #52cffe;
+}
+
+.text {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  text-align: center;
+
+  margin: 0;
+}
+
+.noReviewsText {
+  font-family: fantasy, serif;
+  font-size: 35px;
+  font-weight: 600;
+  margin: 15px 0px;
+  color: #000;
+}

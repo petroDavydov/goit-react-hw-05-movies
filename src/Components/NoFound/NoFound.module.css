@@ -1,0 +1,22 @@
+.image {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 200px;
+}
+
+.text {
+  font-family: fantasy, serif;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+  background-image: linear-gradient(
+    45deg,
+    #d16ba5,
+    #8aa7ec,
+    #79b3f4,
+    #52cffe,
+    #41dfff,
+    #5ffbf1
+  );
+}
