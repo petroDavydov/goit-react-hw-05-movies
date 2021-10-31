@@ -56,13 +56,13 @@ const MovieDetailsPage = () => {
     setIsVisibleReviews(true);
   };
 
-  const GoBack = () => {
-    history.push(location?.state?.from ?? "./");
+  const goBack = () => {
+    history.push(location?.state?.from ?? "/");
   };
 
   return (
     <>
-      <button className={s.btn} onClick={GoBack} type="button">
+      <button className={s.btn} onClick={goBack} type="button">
         <BiGitPullRequest className={s.BiGitPullRequest} />
         Go-Back
       </button>
@@ -76,7 +76,7 @@ const MovieDetailsPage = () => {
               <NavLink
                 to={{
                   pathname: `${url}/cast`,
-                  state: { from: location?.state?.from ?? "movie" },
+                  state: { from: location?.state?.from ?? "/movie" },
                 }}
                 onClick={createVisibleCast}
                 className={s.link}
@@ -89,7 +89,7 @@ const MovieDetailsPage = () => {
               <NavLink
                 to={{
                   pathname: `${url}/reviews`,
-                  state: { from: location?.state?.from ?? "movie" },
+                  state: { from: location?.state?.from ?? "/movie" },
                 }}
                 onClick={createVisibleReviews}
                 className={s.link}

@@ -1,4 +1,4 @@
-import s from "./MovieList.mmodule.css";
+import s from "./MovieList.module.css";
 import PropTypes from "prop-types";
 import { Link, useLocation } from "react-router-dom";
 
@@ -11,8 +11,8 @@ export default function MovieList({ movies }) {
         <Link
           key={movie.id}
           to={{
-            pathname: `/movie/${movie.id}`,
-            state: { from: location },
+            pathname: `/movies/${movie.id}`,
+            state: { from: location,},
           }}
           className={s.link}
         >
@@ -24,5 +24,5 @@ export default function MovieList({ movies }) {
 }
 
 MovieList.propTypes = {
-  movie: PropTypes.arrayOf(PropTypes.shape),
+  movies: PropTypes.arrayOf(PropTypes.shape),
 };

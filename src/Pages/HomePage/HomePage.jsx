@@ -10,11 +10,11 @@ import MovieList from "../../Components/MovieList";
 const MovieDetailsPage = lazy(() => import("../MovieDetailsPage"));
 
 export default function HomePage() {
-  const [movies, setMovie] = useState([]);
+  const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     API.fetchTrendingMovie().then((movies) => {
-      setMovie(movies);
+      setMovies(movies);
     });
   }, []);
 

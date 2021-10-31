@@ -22,7 +22,7 @@ const fetchSearchMovie = async query => {
     const {
       data: { results },
     } = await axios.get(
-      `search/movie?api_key=${API_KEY}&language=en-US&page=1&include_adult=false`,
+      `search/movie?api_key=${API_KEY}&query=${query}&language=en-US&page=1&include_adult=false`,
     );
     return results;
   } catch (error) {
@@ -35,7 +35,7 @@ const fetchSearchMovie = async query => {
 const fetchMovieById = async movieId => {
   try {
     const response = await axios.get(
-      `movie/${movieId}?api_key=${API_KEY}&language=en-US`,
+      `/movie/${movieId}?api_key=${API_KEY}&language=en-US`,
     );
     return response.data;
   } catch (error) {
@@ -61,7 +61,7 @@ const fetchMovieByCast = async movieId => {
 const fetchMovieByReviews = async movieId => {
   try {
     const { data } = await axios.get(
-      `movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`,
+      `movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US`,
     );
     return data.results;
   } catch (error) {

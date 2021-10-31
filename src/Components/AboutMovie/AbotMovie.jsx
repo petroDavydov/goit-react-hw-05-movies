@@ -7,11 +7,12 @@ export default function AboutMovie({ movie }) {
   return (
     <>
       <img
-        className={s.poster}
+			  className={s.poster}
+			   alt={movie.title}
         src={
           movie.poster_path ? `${posterURL}${movie.poster_path}` : moviePhoto
         }
-        alt={movie.title}
+       
       />
 
       <h3 className={s.title}>
@@ -27,9 +28,7 @@ export default function AboutMovie({ movie }) {
           {movie.genres.map((genre) => genre.name).join(" ")}
         </span>
       }
-
       <hr />
-
       <p className={s.addInfo}> ✅ Additional Information</p>
     </>
   );

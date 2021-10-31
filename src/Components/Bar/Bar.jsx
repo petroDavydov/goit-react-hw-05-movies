@@ -1,5 +1,5 @@
 import s from "./Bar.module.css";
-import Navigation from "./Navigation/Navigation";
+import Navigation from "../Navigation/Navigation";
 
 export default function Bar() {
   return (
