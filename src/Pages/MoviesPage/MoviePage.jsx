@@ -15,6 +15,7 @@ import s from './MoviePage.module.css';
 
 import Api from '../../Services/API';
 import PageHeading from '../../Components/PageHeading';
+
 const MovieDetailsPage = lazy(() => import('../MovieDetailsPage'));
 const MovieList = lazy(() => import('../../Components/MovieList'));
 
@@ -74,7 +75,7 @@ const MoviesPage = () => {
                   placeholder="Search Movie"
                 />
 
-                <button type="submit">Search</button>
+                <button type="submit">👀 Search</button>
               </form>
               <>
                 <MovieList movies={movies} />

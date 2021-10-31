@@ -29,9 +29,6 @@ export default function AboutMovie({ movie }) {
       }
       <hr />
       <p className={s.addInfo}> ✅ Additional Information</p>
-      <span role="img" aria-label="camera">
-        &nbsp;🎥
-      </span>
     </>
   );
 }

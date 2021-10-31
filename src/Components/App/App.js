@@ -22,7 +22,9 @@ const MoviesPage = lazy(() =>
 );
 
 const NotFoundPage = lazy(() =>
-  import('../../Pages/NotFoundPage' /*webpackChunkName: "not-found-page" */),
+  import(
+    '../../Pages/NotFoundPage/NotFoundPage' /*webpackChunkName: "not-found-page" */
+  ),
 );
 
 function App() {
@@ -36,11 +38,11 @@ function App() {
             <HomePage />
           </Route>
 
-          <Route exact path="/">
+          <Route exact path="/movies">
             <MoviesPage />
           </Route>
 
-          <Route exact path="/">
+          <Route>
             <NotFoundPage />
           </Route>
         </Switch>
