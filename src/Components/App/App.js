@@ -2,11 +2,14 @@ import { Switch, Route } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 
 import Container from '../Container/Container';
-import Bar from '../Bar';
+import Bar from '../Bar/Bar';
 import Footer from '../Footer/Footer';
-import LoaderTriangle from '../Loader/Loader';
+
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+import Loader from 'react-loader-spinner';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
 // ==============
 
@@ -24,7 +27,7 @@ const NotFoundPage = lazy(() =>
 
 function App() {
   return (
-    <Suspense fallback={<LoaderTriangle />}>
+    <Suspense fallback={<Loader />}>
       <Container>
         <ToastContainer autoClose={2500} />
         <Bar />

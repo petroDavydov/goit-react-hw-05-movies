@@ -1,14 +1,14 @@
-import { useParams } from "react-router";
-import { useEffect, useState } from "react";
-import s from "./Reviews.module.css";
-import API from "../../Services/API";
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import s from './Reviews.module.css';
+import Api from '../../Services/API';
 
 export default function Reviews() {
   const { movieId } = useParams();
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    API.fetchMovieByReviews(movieId).then(setReviews);
+    Api.fetchMovieByReviews(movieId).then(setReviews);
   }, [movieId]);
 
   return (

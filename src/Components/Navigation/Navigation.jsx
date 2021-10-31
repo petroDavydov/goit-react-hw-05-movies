@@ -1,5 +1,5 @@
-import { NavLink } from "react-router-dom";
-import s from "./Navigation.module.css";
+import { NavLink } from 'react-router-dom';
+import s from './Navigation.module.css';
 
 export default function Navigation() {
   return (
@@ -13,7 +13,7 @@ export default function Navigation() {
         className={s.link}
         activeClassName={s.activeLink}
       >
-        Movie
+        Movies
       </NavLink>
     </nav>
   );
