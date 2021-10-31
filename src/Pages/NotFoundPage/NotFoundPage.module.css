@@ -1,0 +1,19 @@
+.text {
+  font-family: fantasy, serif;
+  font-size: 40px;
+  font-weight: 900;
+  letter-spacing: 0.03em;
+  text-align: center;
+  padding: 10px;
+  color: #000;
+  background: linear-gradient(
+    to right,
+    #d16ba5,
+    #8aa7ec,
+    #79b3f4,
+    #69bff8,
+    #41dfff,
+    #46eefa,
+    #5ffbf1
+  );
+}

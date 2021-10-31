@@ -16,7 +16,7 @@ export default function MovieList({ movies }) {
           }}
           className={s.link}
         >
-          <li className={s.title}>{movie.title ?? movie.name}</li>
+          <li className={s.title}>{movie.title || movie.name}</li>
         </Link>
       ))}
     </ul>

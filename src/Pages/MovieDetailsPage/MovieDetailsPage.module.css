@@ -1,0 +1,38 @@
+.navList {
+  display: flex;
+  justify-content: space-evenly;
+}
+.btn {
+  display: block;
+  margin-bottom: 20px;
+  width: 100px;
+  height: 40px;
+  background-color: #5ffbf1;
+  border-radius: 10px;
+}
+
+.btn:hover,
+.btn:focus {
+  cursor: pointer;
+  background-color: #ccc;
+  transform: scale(1.03);
+  box-shadow: 3px 3px 10px #d16ba5;
+}
+.link {
+  color: #000;
+  text-decoration: none;
+}
+.activeLink {
+  color: #69bff8;
+}
+.navItem {
+  font-size: 30px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.BiGitPullRequest {
+  font-size: 15px;
+  margin-right: 10px;
+  color: #000;
+}
