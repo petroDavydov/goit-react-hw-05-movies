@@ -76,7 +76,7 @@ const MovieDetailsPage = () => {
               <NavLink
                 to={{
                   pathname: `${url}/cast`,
-                  //   state: { from: location?.state?.from ?? '/movie' },
+                  state: { from: location?.state?.from ?? '/movie' },
                 }}
                 className={s.link}
                 activeClassName={s.activeLink}
@@ -89,7 +89,7 @@ const MovieDetailsPage = () => {
               <NavLink
                 to={{
                   pathname: `${url}/reviews`,
-                  //   state: { from: location?.state?.from ?? '/movie' },
+                  state: { from: location?.state?.from ?? '/movie' },
                 }}
                 className={s.link}
                 activeClassName={s.activeLink}
