@@ -1,40 +1,40 @@
-import React, { useState, useEffect, Suspense, lazy } from "react";
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import {
   Switch,
   Route,
   useRouteMatch,
   useHistory,
   useLocation,
-} from "react-router-dom";
-import { toast } from "react-toastify";
-import queryString from "query-string";
+} from 'react-router-dom';
+import { toast } from 'react-toastify';
+import queryString from 'query-string';
 
-import Loader from "react-loader-spinner";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
-import s from "./MoviePage.module.css";
+import Loader from 'react-loader-spinner';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
+import s from './MoviePage.module.css';
 
-import API from "../../Services/API";
-import PageHeading from "../../Components/PageHeading";
-const MovieDetailsPage = lazy(() => import("../MovieDetailsPage"));
-const MovieList = lazy(() => import("../../Components/MovieList"));
+import Api from '../../Services/API';
+import PageHeading from '../../Components/PageHeading';
+const MovieDetailsPage = lazy(() => import('../MovieDetailsPage'));
+const MovieList = lazy(() => import('../../Components/MovieList'));
 
-const MoviePage = () => {
-  const [query, setQuery] = useState("");
+const MoviesPage = () => {
+  const [query, setQuery] = useState('');
   const [movies, setMovies] = useState([]);
 
   const history = useHistory();
   const location = useLocation();
   const path = useRouteMatch();
 
-  const changeHandler = (evt) => {
+  const changeHandler = evt => {
     const inputQuery = evt.target.value;
     setQuery(inputQuery);
   };
 
-  const submitHandler = async (evt) => {
+  const submitHandler = async evt => {
     evt.preventDefault();
-    if (query.trim() === "") {
-      toast.info("Enter correct request");
+    if (query.trim() === '') {
+      toast.info('Enter correct request');
       return;
     }
 
@@ -42,7 +42,7 @@ const MoviePage = () => {
     reset();
   };
 
-  const reset = () => setQuery("");
+  const reset = () => setQuery('');
 
   useEffect(() => {
     const movie = queryString.parse(location.search).query;
@@ -50,8 +50,8 @@ const MoviePage = () => {
       setMovies([]);
     }
     if (movie) {
-      API.fetchSearchMovie(movie).then((res) => setMovies(res));
-      setQuery("");
+      Api.fetchSearchMovies(movie).then(res => setMovies(res));
+      setQuery('');
     }
   }, [location.search]);
 
@@ -87,4 +87,4 @@ const MoviePage = () => {
   );
 };
 
-export default MoviePage;
+export default MoviesPage;

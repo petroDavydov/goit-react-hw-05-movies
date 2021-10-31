@@ -17,7 +17,7 @@ const fetchTrendingMovie = async () => {
 
 //поиск кинофильма по ключевому слову на странице фильмов.
 
-const fetchSearchMovie = async query => {
+const fetchSearchMovies = async query => {
   try {
     const {
       data: { results },
@@ -35,7 +35,7 @@ const fetchSearchMovie = async query => {
 const fetchMovieById = async movieId => {
   try {
     const response = await axios.get(
-      `movie/${movieId}?api_key=${API_KEY}&language=en-US`,
+      `/movie/${movieId}?api_key=${API_KEY}&language=en-US`,
     );
     return response.data;
   } catch (error) {
@@ -47,10 +47,10 @@ const fetchMovieById = async movieId => {
 
 const fetchMovieByCast = async movieId => {
   try {
-    const result = await axios.get(
+    const results = await axios.get(
       `movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`,
     );
-    return result.data.cast;
+    return results.data.cast;
   } catch (error) {
     console.log(error.message);
   }
@@ -71,7 +71,7 @@ const fetchMovieByReviews = async movieId => {
 
 const Api = {
   fetchTrendingMovie,
-  fetchSearchMovie,
+  fetchSearchMovies,
   fetchMovieById,
   fetchMovieByCast,
   fetchMovieByReviews,

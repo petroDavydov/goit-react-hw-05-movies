@@ -1,6 +1,6 @@
-import React, { useState, useEffect, lazy, Suspense } from "react";
-import Loader from "react-loader-spinner";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import React, { useState, useEffect, lazy, Suspense } from 'react';
+import Loader from 'react-loader-spinner';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import {
   NavLink,
   Route,
@@ -8,20 +8,20 @@ import {
   useHistory,
   useParams,
   useRouteMatch,
-} from "react-router-dom";
-import { BiGitPullRequest } from "react-icons/bi";
+} from 'react-router-dom';
+import { BiGitPullRequest } from 'react-icons/bi';
 
-import API from "../../Services/API";
-import AboutMovie from "../../Components/AboutMovie";
-import s from "./MovieDetailsPage.module.css";
-import NotFoundMovie from "../NotFoundPage";
+import Api from '../../Services/API';
+import AboutMovie from '../../Components/AboutMovie';
+import s from './MovieDetailsPage.module.css';
+import NotFoundPage from '../NotFoundPage';
 
 const Cast = lazy(() =>
-  import("../../Components/Cast" /* webpackChunkName: "Cast" */)
+  import('../../Components/Cast' /* webpackChunkName: "Cast" */),
 );
 
 const Reviews = lazy(() =>
-  import("../../Components/Reviews" /* webpackChunkName: "Reviews" */)
+  import('../../Components/Reviews' /* webpackChunkName: "Reviews" */),
 );
 
 const MovieDetailsPage = () => {
@@ -35,9 +35,9 @@ const MovieDetailsPage = () => {
   const [isVisibleReviews, setIsVisibleReviews] = useState(false);
 
   useEffect(() => {
-    API.fetchMovieById(movieId)
+    Api.fetchMovieById(movieId)
       .then(setMovie)
-      .catch((error) => {
+      .catch(error => {
         console.log(error.message);
       });
   }, [movieId]);
@@ -57,7 +57,7 @@ const MovieDetailsPage = () => {
   };
 
   const goBack = () => {
-    history.push(location?.state?.from ?? "/");
+    history.push(location?.state?.from ?? '/');
   };
 
   return (
@@ -76,11 +76,11 @@ const MovieDetailsPage = () => {
               <NavLink
                 to={{
                   pathname: `${url}/cast`,
-                  state: { from: location?.state?.from ?? "/movie" },
+                  state: { from: location?.state?.from ?? '/movie' },
                 }}
-                onClick={createVisibleCast}
                 className={s.link}
                 activeClassName={s.activeLink}
+                onClick={createVisibleCast}
               >
                 Cast
               </NavLink>
@@ -89,17 +89,18 @@ const MovieDetailsPage = () => {
               <NavLink
                 to={{
                   pathname: `${url}/reviews`,
-                  state: { from: location?.state?.from ?? "/movie" },
+                  state: { from: location?.state?.from ?? '/movie' },
                 }}
-                onClick={createVisibleReviews}
                 className={s.link}
                 activeClassName={s.activeLink}
+                onClick={createVisibleReviews}
               >
                 Reviews
               </NavLink>
             </li>
           </ul>
           <hr />
+
           <Suspense fallback={<Loader />}>
             <Route path={`${path}/cast`}>
               {movie && isVisibleCast && <Cast />}
@@ -111,7 +112,7 @@ const MovieDetailsPage = () => {
           </Suspense>
         </>
       ) : (
-        <NotFoundMovie />
+        <NotFoundPage />
       )}
     </>
   );

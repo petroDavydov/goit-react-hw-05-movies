@@ -1,19 +1,19 @@
-import { useState, useEffect, Suspense, lazy } from "react";
-import { Switch, Route } from "react-router-dom";
-import Loader from "react-loader-spinner";
-import "react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+import { useState, useEffect, Suspense, lazy } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import Loader from 'react-loader-spinner';
+import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 
-import API from "../../Services/API";
-import PageHeading from "../../Components/PageHeading";
-import MovieList from "../../Components/MovieList";
+import Api from '../../Services/API';
+import PageHeading from '../../Components/PageHeading';
+import MovieList from '../../Components/MovieList';
 
-const MovieDetailsPage = lazy(() => import("../MovieDetailsPage"));
+const MovieDetailsPage = lazy(() => import('../MovieDetailsPage'));
 
 export default function HomePage() {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
-    API.fetchTrendingMovie().then((movies) => {
+    Api.fetchTrendingMovie().then(movies => {
       setMovies(movies);
     });
   }, []);
