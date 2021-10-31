@@ -75,7 +75,7 @@ const MoviesPage = () => {
                   placeholder="Search Movie"
                 />
 
-                <button type="submit">👀 Search</button>
+                <button type="submit">Search</button>
               </form>
               <>
                 <MovieList movies={movies} />

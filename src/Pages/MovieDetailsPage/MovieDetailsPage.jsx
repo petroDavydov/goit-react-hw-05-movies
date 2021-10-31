@@ -28,7 +28,7 @@ const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const { url, path } = useRouteMatch();
   const history = useHistory();
-  const location = useLocation();
+  const location = useLocation(null);
 
   const [movie, setMovie] = useState(null);
   const [isVisibleCast, setIsVisibleCast] = useState(false);
@@ -76,7 +76,7 @@ const MovieDetailsPage = () => {
               <NavLink
                 to={{
                   pathname: `${url}/cast`,
-                  state: { from: location?.state?.from ?? '/movie' },
+                  //   state: { from: location?.state?.from ?? '/movie' },
                 }}
                 className={s.link}
                 activeClassName={s.activeLink}
@@ -89,7 +89,7 @@ const MovieDetailsPage = () => {
               <NavLink
                 to={{
                   pathname: `${url}/reviews`,
-                  state: { from: location?.state?.from ?? '/movie' },
+                  //   state: { from: location?.state?.from ?? '/movie' },
                 }}
                 className={s.link}
                 activeClassName={s.activeLink}

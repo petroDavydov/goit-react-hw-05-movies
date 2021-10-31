@@ -46,8 +46,8 @@ function App() {
             <NotFoundPage />
           </Route>
         </Switch>
+        <Footer />
       </Container>
-      <Footer />
     </Suspense>
   );
 }
