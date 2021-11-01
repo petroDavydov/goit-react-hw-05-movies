@@ -50,7 +50,7 @@ function App() {
           </Route>
 
           {/* Добавил как понял */}
-          <Route path="/:movieId" />
+          <Route path="movies/:movieId" exact />
           <MovieDetailsPage />
           <Route />
           {/* =============== */}
