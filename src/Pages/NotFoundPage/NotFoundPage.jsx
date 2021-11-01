@@ -5,7 +5,7 @@ export default function NotFoundPage() {
   return (
     <>
       <h1 className={s.text}>Sorry...</h1>
-      <img src={NotFoundMovie} alt="" />
+      <img src={NotFoundMovie} alt="NoFoundPicture" />
     </>
   );
 }
