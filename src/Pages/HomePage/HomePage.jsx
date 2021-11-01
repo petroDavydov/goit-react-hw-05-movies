@@ -22,7 +22,7 @@ export default function HomePage() {
     <Suspense fallback={<Loader />}>
       <PageHeading text="Trending Movies Today" />
       <Switch>
-        <Route exact path="/movies/:movieId" component={MovieDetailsPage} />
+        <Route path="/movies/:movieId" component={MovieDetailsPage} />
         <Route exact path="/" render={() => <MovieList movies={movies} />} />
       </Switch>
     </Suspense>

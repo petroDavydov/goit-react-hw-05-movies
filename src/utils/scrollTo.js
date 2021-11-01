@@ -1,8 +1,8 @@
-function scrollToTarget() {
+const scrollToTarget = () => {
   window.scrollTo({
     top: document.documentElement.clientWidth,
     behavior: 'smooth',
   });
-}
+};
 
 export default scrollToTarget;
