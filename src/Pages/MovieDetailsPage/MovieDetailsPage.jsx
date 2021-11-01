@@ -28,7 +28,7 @@ const MovieDetailsPage = () => {
   const { movieId } = useParams();
   const { url, path } = useRouteMatch();
   const history = useHistory();
-  const location = useLocation(null);
+  const location = useLocation();
 
   const [movie, setMovie] = useState(null);
   const [isVisibleCast, setIsVisibleCast] = useState(false);
