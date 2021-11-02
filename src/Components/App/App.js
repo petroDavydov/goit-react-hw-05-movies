@@ -18,7 +18,7 @@ const HomePage = lazy(() =>
 );
 
 const MoviesPage = lazy(() =>
-  import('../../Pages/MoviesPage' /*webpackChunkName: "movies-page" */),
+  import('../../Pages/MoviesPage/' /*webpackChunkName: "movies-page" */),
 );
 
 const NotFoundPage = lazy(() =>
@@ -27,12 +27,12 @@ const NotFoundPage = lazy(() =>
   ),
 );
 // Добавил после правок
-const MovieDetailsPage = lazy(
-  () =>
-    import(
-      '../../Pages/MovieDetailsPage/MovieDetailsPage'
-    ) /*webpackChunkName: "movie-details-page" */,
-);
+// const MovieDetailsPage = lazy(
+//   () =>
+//     import(
+//       '../../Pages/MovieDetailsPage/MovieDetailsPage'
+//     ) /*webpackChunkName: "movie-details-page" */,
+// );
 
 function App() {
   return (
@@ -50,9 +50,9 @@ function App() {
           </Route>
 
           {/* Добавил как понял */}
-          <Route path="movies/:movieId" />
+          {/* <Route path="movies/:movieId" />
           <MovieDetailsPage />
-          <Route />
+          <Route /> */}
           {/* =============== */}
 
           <Route>

@@ -16,7 +16,9 @@ import s from './MoviePage.module.css';
 import Api from '../../Services/API';
 import PageHeading from '../../Components/PageHeading';
 
-const MovieDetailsPage = lazy(() => import('../MovieDetailsPage'));
+const MovieDetailsPage = lazy(() =>
+  import('../MovieDetailsPage/MovieDetailsPage'),
+);
 const MovieList = lazy(() => import('../../Components/MovieList'));
 
 const MoviesPage = () => {
@@ -25,7 +27,7 @@ const MoviesPage = () => {
 
   const history = useHistory();
   const location = useLocation();
-  const path = useRouteMatch();
+  const { path } = useRouteMatch(); //исправил небило фигурних скобок
 
   const changeHandler = evt => {
     const inputQuery = evt.target.value;

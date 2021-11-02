@@ -30,7 +30,7 @@ const MovieDetailsPage = () => {
   const history = useHistory();
   const location = useLocation();
 
-  const [movie, setMovie] = useState({});
+  const [movie, setMovie] = useState(null);
   const [isVisibleCast, setIsVisibleCast] = useState(false);
   const [isVisibleReviews, setIsVisibleReviews] = useState(false);
 
