@@ -3,13 +3,14 @@ import Loader from 'react-loader-spinner';
 import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
 import {
   NavLink,
+  Link,
   Route,
   useLocation,
   useHistory,
   useParams,
   useRouteMatch,
 } from 'react-router-dom';
-import { BiGitPullRequest } from 'react-icons/bi';
+import { TiArrowBackOutline } from 'react-icons/ti';
 
 import Api from '../../Services/API';
 import AboutMovie from '../../Components/AboutMovie';
@@ -62,10 +63,18 @@ const MovieDetailsPage = () => {
 
   return (
     <>
-      <button className={s.btn} onClick={goBack} type="button">
+      {/* <button className={s.btn} onClick={goBack} type="button">
         <BiGitPullRequest className={s.BiGitPullRequest} />
         Go-Back
-      </button>
+      </button> */}
+      {/* Experiment with Link */}
+      <Link
+        to={location?.state?.from ?? '/'}
+        className={s.btn}
+        onClick={goBack}
+      >
+        <TiArrowBackOutline />
+      </Link>
 
       {movie ? (
         <>

@@ -16,7 +16,6 @@ export default function MovieList({ movies }) {
           }}
           className={s.link}
         >
-          {/* Вот тут я не понял куда его двигать он ведь внутри 'ul'??? */}
           <li className={s.title}>{movie.title || movie.name}</li>
         </Link>
       ))}
