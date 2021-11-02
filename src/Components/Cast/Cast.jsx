@@ -8,7 +8,7 @@ import s from './Cast.module.css';
 import noFoundImage from '../../images/nofound.png';
 
 export default function Cast() {
-  const castUrl = 'https://image.tmdb.org/t/p/w100';
+  const castUrl = 'https://image.tmdb.org/t/p/original';
   const { movieId } = useParams();
   const [casts, setCasts] = useState([]);
 
