@@ -26,13 +26,6 @@ const NotFoundPage = lazy(() =>
     '../../Pages/NotFoundPage/NotFoundPage' /*webpackChunkName: "not-found-page" */
   ),
 );
-// Добавил после правок
-// const MovieDetailsPage = lazy(
-//   () =>
-//     import(
-//       '../../Pages/MovieDetailsPage/MovieDetailsPage'
-//     ) /*webpackChunkName: "movie-details-page" */,
-// );
 
 function App() {
   return (
@@ -48,12 +41,6 @@ function App() {
           <Route path="/movies">
             <MoviesPage />
           </Route>
-
-          {/* Добавил как понял */}
-          {/* <Route path="movies/:movieId" />
-          <MovieDetailsPage />
-          <Route /> */}
-          {/* =============== */}
 
           <Route>
             <NotFoundPage />
