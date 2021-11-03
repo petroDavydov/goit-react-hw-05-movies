@@ -1,24 +1,23 @@
 .title {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: 25px;
-  font-weight: 600;
-  margin: 10px 0px;
-  color: #52cffe;
+  margin: 20px;
 }
 
 .text {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  font-size: 15px;
-  font-weight: 400;
-  text-align: center;
-
+  font-family: 'Noto Sans KR', sans-serif;
   margin: 0;
+  padding: 20px;
+  font-size: 18px;
+  line-height: 1.67;
+  color: #686666;
+  text-indent: 40px;
 }
 
 .noReviewsText {
-  font-family: fantasy, serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: 35px;
   font-weight: 600;
-  margin: 15px 0px;
+  margin: 15px;
   color: #000;
 }
