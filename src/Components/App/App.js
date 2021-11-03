@@ -1,9 +1,10 @@
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Redirect } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 
 import Container from '../Container/Container';
 import Bar from '../Bar/Bar';
 import Footer from '../Footer/Footer';
+import MovieDetailsPage from '../../Pages/MovieDetailsPage/MovieDetailsPage';
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -42,9 +43,17 @@ function App() {
             <MoviesPage />
           </Route>
 
-          <Route>
+          {/* Добавил сюда */}
+          <Route path="/movie/:movieId">
+            <MovieDetailsPage />
+          </Route>
+
+          <Route path="/error">
             <NotFoundPage />
           </Route>
+
+          {/* Компонент Redirect */}
+          <Redirect to="/" />
         </Switch>
         <Footer />
       </Container>
