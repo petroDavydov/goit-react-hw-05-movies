@@ -1,6 +1,6 @@
 const scrollToTarget = () => {
   window.scrollTo({
-    top: document.documentElement.clientWidth,
+    top: document.documentElement.clientHeight,
     behavior: 'smooth',
   });
 };

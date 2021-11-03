@@ -8,7 +8,13 @@ export default function Reviews() {
   const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
-    Api.fetchMovieByReviews(movieId).then(setReviews);
+    Api.fetchMovieByReviews(movieId).then(res => {
+      setReviews(res);
+      window.scrollTo({
+        top: document.documentElement.clientHeight,
+        behavior: 'smooth',
+      });
+    });
   }, [movieId]);
 
   return (

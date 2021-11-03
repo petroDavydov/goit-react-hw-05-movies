@@ -1,16 +1,22 @@
 .link {
   display: inline-block;
   text-decoration: none;
-  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Noto Sans KR', sans-serif;
   font-size: 30px;
   font-weight: 800;
-  padding: 15px;
+  padding: 15px 0px;
   margin-left: 15px;
-  color: #000;
+  color: #101111c9;
 }
 
 .activeLink {
   color: #d16ba5;
-  text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
-    1px 1px 1px rgba(0, 0, 0, 0.5);
+  text-shadow: 3px 0px 5px #69bff8;
+  transition: 500ms ease;
+}
+
+.link:hover {
+  color: #69bff8;
+  text-shadow: 3px 0px 5px #d16ba5;
+  transition: 500ms ease;
 }
