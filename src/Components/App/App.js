@@ -53,7 +53,7 @@ function App() {
           </Route>
 
           {/* Компонент Redirect */}
-          <Redirect to="/" />
+          <Redirect to="/error" />
         </Switch>
         <Footer />
       </Container>

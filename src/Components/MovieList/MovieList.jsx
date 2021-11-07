@@ -9,9 +9,8 @@ export default function MovieList({ movies }) {
   return (
     <ul className={s.list}>
       {movies.map(movie => (
-        <li className={s.item}>
+        <li className={s.item} key={movie.id}>
           <Link
-            key={movie.id}
             to={{
               pathname: `/movies/${movie.id}`,
               state: { from: location },

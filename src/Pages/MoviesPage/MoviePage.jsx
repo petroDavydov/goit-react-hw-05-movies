@@ -31,6 +31,10 @@ const MoviesPage = () => {
 
   const changeHandler = evt => {
     const inputQuery = evt.target.value;
+    if (inputQuery === query) {
+      //добавил с Владом
+      return;
+    }
     setQuery(inputQuery);
   };
 
@@ -50,10 +54,15 @@ const MoviesPage = () => {
   useEffect(() => {
     const movie = queryString.parse(location.search).query;
     if (!movie) {
-      setMovies([]);
+      // setMovies([]);
+      return;
     }
     if (movie) {
-      Api.fetchSearchMovies(movie).then(res => setMovies(res));
+      Api.fetchSearchMovies(movie)
+        .then(res => setMovies(res))
+        .catch(error => {
+          console.log(error);
+        });
       setQuery('');
     }
   }, [location.search]);
